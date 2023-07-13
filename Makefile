@@ -27,6 +27,8 @@ consoleApp: ## Accéder à la console de l'application
 createProject: ## Créer le projet Symfony
 	$(DOCKER) docker exec www_project composer create-project symfony/website-skeleton project
 
+## Créer un formulaire [symfony console make:registration-form]
+
 ## —— 🐳 Docker ——
 start: ## Démarrer les container / Start app
 	$(MAKE) docker-start 

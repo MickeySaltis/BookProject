@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Author;
 use App\Entity\Book;
+use App\Entity\Invitation;
 use App\Entity\Publisher;
 use App\Entity\Status;
 use App\Entity\User;
@@ -41,5 +42,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Status', 'fa fa-info-circle', Status::class);
         yield MenuItem::linkToCrud('Utilisateurs', 'fa fa-users', User::class);
         yield MenuItem::linkToCrud('Lectures', 'fa fa-book-reader', UserBook::class);
+        yield MenuItem::linkToCrud('Invitations', 'fa fa-envelope', Invitation::class);
     }
 }
