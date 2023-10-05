@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche{% endblock %}
+
+{% block body %}
+    <h1 class="text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white mb-4">Rechercher un livre</h1>
+
+        <div>
+            <input class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block mx-auto px-5 py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" type="search" name="search" placeholder="Recherche..."
+                hx-post="/profile/search/api"
+                hx-trigger="keyup changed delay:500ms, search"
+                hx-target="#search-results"
+            >
+        </div>
+        <div id="search-results" class=""></div>
+{% endblock %}
