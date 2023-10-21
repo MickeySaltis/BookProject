@@ -22,9 +22,18 @@ class UserFixtures extends Fixture
             $user = new User();
             $user->setEmail($faker->email())
                 ->setPassword($this->hasher->hashPassword($user, 'password'))
-                ->setPseudo($faker->userName());
+                ->setPseudo($faker->userName())
+                ->setRoles(["ROLE_USER"]);
             $manager->persist($user);
         }
+
+        /* Generate Admin */
+        $user = new User();
+        $user->setEmail('admin@admin.com')
+            ->setPassword($this->hasher->hashPassword($user, 'password'))
+            ->setPseudo('Admin')
+            ->setRoles(["ROLE_USER", "ROLE_ADMIN"]);
+        $manager->persist($user);
 
         $manager->flush();
     }

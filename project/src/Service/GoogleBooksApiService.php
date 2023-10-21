@@ -11,6 +11,11 @@ class GoogleBooksApiService
     public function __construct(private readonly HttpClientInterface $googlebooksClient)
     {}
 
+    public function get(string $id): array
+    {
+        return $this->makeRequest('GET', 'volumes/'.$id);
+    }
+
     public function search(string $search): array
     {
         if(strlen($search) < 3)
