@@ -3,6 +3,7 @@
 {% block title %}Recherche{% endblock %}
 
 {% block body %}
+<div class="container text-center mx-auto px-3">
     <h1 class="text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white mb-4">Rechercher un livre</h1>
 
         <div>
@@ -12,5 +13,8 @@
                 hx-target="#search-results"
             >
         </div>
-        <div id="search-results" class=""></div>
+
+        <div id="search-results" class="flex flex-row flex-wrap mx-auto"></div>
+
+</div>
 {% endblock %}
